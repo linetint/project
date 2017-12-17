@@ -1,0 +1,33 @@
+*{margin:0; padding:0;}
+
+
+.login-bg{
+    
+/*    vh단위 : view port height를 의미한다(인터넷 익스플로러9버전 이상부터 됨)
+    (view port는 디바이스의 화면을 의미함)
+    즉 1vh는 1%를 의미한다, 100vh는 화면 100%를 의미한다*/
+    height:100vh;
+    
+    background-color:lightgrey;
+    
+    overflow:hidden;
+}
+
+
+.login{
+    
+    width:360px;
+    margin:100px auto 0;
+    
+    padding:20px;
+    border:1px solid black;
+    border-radius: 5px;
+    
+    background-color:lightgray;
+    
+    
+    
+    
+}
+
+
