@@ -6,14 +6,14 @@ FullStack Web develop project
 ## 개발환경
 
 
-## 프론트엔드(포트 4100을 이용해서 개발)
+## 프론트엔드(포트 3000)
 -React
 -React-Router
 -Axios
 
 
 
-## 백엔드(포트 4000을 이용해서 개발.정해진것 아님)
+## 백엔드(포트 4000)
 -Node
 -Express
 -MVC
