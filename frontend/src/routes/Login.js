@@ -101,6 +101,8 @@ class Login extends React.Component{
                 
             }else if(error===-1){
                 
+                alert('비밀번호가 맞지 않습니다');
+                
 //에러 1이 뜨면 그냥 아무것도 실행시키지 않고 return해줌
                 return;
                 

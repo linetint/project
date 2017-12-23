@@ -1,0 +1,141 @@
+*{margin:0; padding:0;}
+
+.container{
+    
+    width:1080px;
+    margin:30px auto;
+    
+}
+
+
+.card{
+    
+    width:250px;
+    height:330px;
+    
+    float:left;
+    
+    margin:10px;
+    
+    border:1px solid lightgray;
+    
+    
+}
+
+
+
+
+.thums{
+
+    position:relative;
+    
+    
+}
+
+
+.thums .img{
+    
+    height:185px;
+    background-color:lightgray;
+}
+
+
+.thums .logo{
+    
+    width:40px;
+    height:40px;
+    
+    background-color:gray;
+    
+    position:absolute;
+    
+    left:15px;
+    bottom:15px;
+    
+}
+
+
+
+.info{
+    
+    
+    border-top:1px solid lightgray;
+    
+    border-bottom:1px solid lightgray;
+    
+    padding:15px;
+    
+}
+
+
+
+.info h3{
+    
+    font-size:18px;
+}
+
+
+.info .company{
+    
+    color:red;
+    
+}
+
+
+.info .rebate{
+    
+    font-size:12px;
+    color:blue;
+    
+}
+
+
+.opt{
+    
+    height:40px;
+    line-height:40px;
+    
+    padding:0px 15px;
+    
+}
+
+
+.opt .recom{
+    
+    float:left;
+    
+}
+
+
+.opt .favorite{
+    
+    float:right;
+    width:16px;
+    height:16px;
+    
+    border-radius: 50%;
+    
+    border:1px solid lightgray;
+    
+    margin:12px 0;
+    
+}
+
+
+
+
+/*.opt에 .active클래스가 적용되면 배경색을 적용함*/
+/*(자바스크립트에서 자체적인 스타일을 주는 방법외에 다른 방법)*/
+
+.opt .active{
+    background-color:red;
+}
+
+
+
+
+
+
+
+
+

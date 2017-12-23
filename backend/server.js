@@ -73,9 +73,24 @@ app.post('/login',function(request,response){
 
 
 
+//같은폴더내에 있는 data의 내용을 가져와서 상수(변하지 않는 수) companyList에 넣는다는 의미이다
+const companyList=require('./data');
 
+
+
+//이 경로로 들어오면 함수를 실행해서 밑에 내용을 준다는 의미이다
+//response.json(companyList); :json형태로 응답한다(응답 내용은 companyList의 내용)
+//get은 요청할때를 의미한다
+
+app.get('/company',(request,response)=>{
+    
+   response.json(companyList);
+    
+});
 
 
 
 
 const server=app.listen(4000);
+
+
