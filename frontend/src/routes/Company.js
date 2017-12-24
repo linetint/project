@@ -24,16 +24,22 @@ class Company extends React.Component{
             
         companyArray:[
             
-                           {company:"GS SHOP",
+               {company:"GS SHOP",
                 title:"보안 솔류션 담당자",
                 rebate:1000000,
                 recom:11,
                 favorite:0},
             
             
+            
         ]
+            ,type:"전체"
         
         }
+        
+        this.handleClick=this.handleClick.bind(this);
+        this.handleCategory=this.handleCategory.bind(this);
+        
     }
     
 //    componentDidMount는 랜더링을 한번 마친후 실행시키는 메소드이다
@@ -66,6 +72,24 @@ class Company extends React.Component{
             });
             
         }
+    
+    
+//    카드를 클릭했을때 실행하는 메소드이다
+    handleClick(company_id){
+        
+        console.log(company_id);
+        
+        this.props.history.push(`/company/${company_id}`);
+        
+        
+    }
+    
+    handleCategory(event){
+        
+//        event안에 있는 target의 innerHTML(HTML내부에 있는 내용)을 가져옴
+        this.setState({type:event.target.innerHTML});
+        
+    }
     
 
     
@@ -113,17 +137,40 @@ class Company extends React.Component{
         
         
         
-        const {companyArray}=this.state;
+        const {companyArray, type}=this.state;
+        
+        
+        const newArray=companyArray.filter((v)=>{
+            
+            if(type==='전체'){
+                
+                return v;
+                
+            }
+            
+            return v.type===type;
+            
+            
+        });
+        
+        
+        
+        
+        
+        
         
 //        list를 만들고 거기에는 companyArray를 map하는 함수내용을 담고 밑에 리턴값안에 {list}를 써서 뿌려줄수있다
 //        배열 갯수만큼 뿌려지니 4번 뿌려진다
 
-        const list=companyArray.map((value)=>{
+//        const list=companyArray.map((value)=>{
+        const list=newArray.map((value)=>{
             
            return (
            
                <Card
+                   cardLink={this.handleClick}
                    key={value.id}
+                   company_id={value.id}
                    company={value.name}
                    title={value.title}
                    rebate={value.rebate}
@@ -141,16 +188,24 @@ class Company extends React.Component{
          return(
 
             <div>
+            
+             <ul className="category">
+               
+                <li onClick={this.handleCategory}>전체</li>
+                <li onClick={this.handleCategory}>프론트엔드개발자</li>
+                <li onClick={this.handleCategory}>백엔드개발자</li>
+                <li onClick={this.handleCategory}>앱개발자</li>
+             
+             </ul>
              
                
             <div className="list">
                 
-                  <Card title="보안 솔루션 담당자" company="GS SHOP" recom={11} rebate="1000000" favorite={0}/>
-                  <Card title="Web Frontend Software" company="망고 플레이트" recom={36} rebate={1000000} styles={user_style} favorite={1} />
-                  <Card title="Android Develop" company="매스프레소" rebate="1000000"/>
-                  <Card title="iOS Develop" company="매스프레소" rebate="1000000"/>
+
                   
                    {list}
+             
+             
             </div>
                 
                 
@@ -171,7 +226,10 @@ export default Company;
 
 
 
-
+//                  <Card title="보안 솔루션 담당자" company="GS SHOP" recom={11} rebate="1000000" favorite={0}/>
+//                  <Card title="Web Frontend Software" company="망고 플레이트" recom={36} rebate={1000000} styles={user_style} favorite={1} />
+//                  <Card title="Android Develop" company="매스프레소" rebate="1000000"/>
+//                  <Card title="iOS Develop" company="매스프레소" rebate="1000000"/>
 
 //이것들을 여기서 일단 구현해보고 구현하고 난후 나중에 여기에 있는 이것을 지워주고 Card.js에 붙여넣기 
 

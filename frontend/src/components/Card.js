@@ -13,7 +13,7 @@ const Card=(props)=>{
 
        <div>
         
-        <div className="card">
+        <div className="card" onClick={ ()=>{ props.cardLink(props.company_id) } }>
                 
                 
                     <div className="thums">

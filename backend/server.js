@@ -89,6 +89,39 @@ app.get('/company',(request,response)=>{
 });
 
 
+//company라우터에 뒤에 어떤 값이 들어오면 실행킴
+app.get('/company/:company_id',function(request,response){
+    
+    console.log(request.params.company_id);
+    
+    
+//    companyList에서 company를 가져와서 콘솔창에 찍음(cmd에 나옴)
+    const all=companyList.company;
+    
+//    console.log(all);
+//    console.log(all[0]);
+//    console.log(all[0].id);
+    
+    
+    
+//    all에서 filter기능을 이용해서 id값만 가져옴
+//    그래서 params로 넘어온 값과 id가 가지고 있는 값을 빼줘서 분류한다
+    const result=all.filter(function(v){
+        
+        return v.id==request.params.company_id;
+        
+        
+        
+    });
+    
+//    그래서 json형태로 result를 던져준다
+    response.json(result);
+    
+    
+    
+});
+
+
 
 
 const server=app.listen(4000);

@@ -134,6 +134,30 @@
 
 
 
+.category{
+    
+    overflow:hidden;
+    margin-bottom:10px;
+    
+}
+
+.category li{
+    
+    list-style: none;
+    float:left;
+    background-color:black;
+    color:white;
+    border:1px solid black;
+    padding:15px 20px;
+    
+    margin:0 10px;
+    
+    cursor:pointer;
+}
+
+
+
+
 
 
 
